@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
+    <title>Box Shadow Generator</title>
+    <!-- CSS file -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Main -->
+    <div class="main">
+      <!-- Box -->
+      <div class="box">
+        <!-- Copy -->
+        <span data-clipboard-target="#code" class="copy">Copy</span>
+        <!-- CSS Code -->
+        <div id="code" class="css-code">
+          box-shadow:
+          <span name="inset"></span>
+          <span name="x">0px</span>
+          <span name="y">0px</span>
+          <span name="blur">20px</span>
+          <span name="spread">0px</span>
+          <span name="color">#4b4b4b</span>;
+        </div>
+      </div>
+      <!-- Controls -->
+      <div class="controls">
+        <div>
+          <label>Inset</label>
+          <input type="checkbox" name="inset" value="" />
+        </div>
+
+        <div>
+          <label>Horizontal Shadow Length</label>
+          <input
+            type="range"
+            name="x"
+            max="100"
+            min="-100"
+            value="0"
+            data-suffix="px"
+          />
+        </div>
+
+        <div>
+          <label>Vertical Shadow Length</label>
+          <input
+            type="range"
+            name="y"
+            max="100"
+            min="-100"
+            value="0"
+            data-suffix="px"
+          />
+        </div>
+
+        <div>
+          <label>Blur Radius</label>
+          <input
+            type="range"
+            name="blur"
+            max="200"
+            min="0"
+            value="20"
+            data-suffix="px"
+          />
+        </div>
+
+        <div>
+          <label>Spread Radius</label>
+          <input
+            type="range"
+            name="spread"
+            max="200"
+            min="0"
+            value="0"
+            data-suffix="px"
+          />
+        </div>
+
+        <div>
+          <label>Shadow Color</label>
+          <input type="color" name="color" value="#4b4b4b" />
+        </div>
+      </div>
+    </div>
+
+    <!-- JS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
