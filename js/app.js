@@ -21,8 +21,8 @@ function handleShadow() {
 function handleCSS() {
   const suffix = this.dataset.suffix || '';
   // Select Element
-  const span = document.querySelector(`span[name="${this.name}"]`);
-  span.textContent = this.value + suffix;
+  const allSpan = document.querySelectorAll(`span[name="${this.name}"]`);
+  allSpan.forEach((span) => (span.textContent = this.value + suffix));
 }
 
 // Event Listeners
@@ -35,7 +35,7 @@ inputs.forEach((input) => input.addEventListener('mousemove', handleCSS));
 const copy = document.querySelector('.copy');
 
 inputs.forEach((input) =>
-  input.addEventListener('change', () => (copy.innerHTML = 'Copy'))
+  input.addEventListener('change', () => (copy.innerHTML = 'Copy CSS'))
 );
 
 // Copy Code to Clipboard
@@ -45,3 +45,9 @@ clipboard.on('success', function (e) {
 
   e.clearSelection();
 });
+
+// Current Year
+const year = document.querySelector('.year');
+const currentYear = new Date().getFullYear();
+
+year.textContent = currentYear;
