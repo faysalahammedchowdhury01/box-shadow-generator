@@ -122,6 +122,7 @@ span {
 
 input[type='range'] {
   -webkit-appearance: none;
+  background: transparent;
 }
 
 input[type='range']:focus {
