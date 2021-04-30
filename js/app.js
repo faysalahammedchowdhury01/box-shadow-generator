@@ -31,17 +31,16 @@ inputs.forEach((input) => input.addEventListener('mousemove', handleShadow));
 inputs.forEach((input) => input.addEventListener('change', handleCSS));
 inputs.forEach((input) => input.addEventListener('mousemove', handleCSS));
 
-// Change InnerHTML of Copy When Value is Change
-const copy = document.querySelector('.copy');
-
-inputs.forEach((input) =>
-  input.addEventListener('change', () => (copy.innerHTML = 'Copy CSS'))
-);
-
 // Copy Code to Clipboard
 const clipboard = new ClipboardJS('.copy');
 clipboard.on('success', function (e) {
-  copy.innerHTML = 'Copied';
+  const copy = document.querySelector('.copy');
+  copy.innerHTML = 'Copied!';
+
+  // Change Inner HTML After 1.5 sec
+  setTimeout(() => {
+    copy.innerHTML = 'Copy CSS';
+  }, 1500);
 
   e.clearSelection();
 });
